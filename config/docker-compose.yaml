@@ -1,0 +1,35 @@
+version: '3.1'
+
+services:
+  db:
+    image: postgres:14 # we will use postgres:14 image from docker hub for database
+    ports:
+      - "127.0.0.1:5432:5432"
+    environment:
+      - POSTGRES_USER=odoo # Set value of postgres credential
+      - POSTGRES_PASSWORD=odoo
+      - POSTGRES_DB=postgres
+      - PGDATA=/var/lib/postgresql/data
+    volumes:
+          - odoo-db-data:/var/lib/postgresql/data # set postgresql data persistence
+  tes:
+    container_name: tes
+    image: odoo:14
+    volumes:
+      - ../addons:/mnt/custom-addons # Mount volume between host and container, host_dir:container_dir
+      # - ../../odoo_e13/enterprise-13:/mnt/extra-addons # Mount volume between host and container, host_dir:container_dir
+      - ../config:/etc/odoo/
+      - odoo-tes-data:/var/lib/odoo
+    ports:
+      - "8014:8069" # this will create connection port between host and container, this means host_port:container_port
+    depends_on:
+      - db # set depends on postgresql db
+    environment:
+      - HOST=db
+      - USER=odoo
+      - PASSWORD=odoo
+    command: odoo  --dev xml,qweb
+
+volumes:
+  odoo-tes-data:
+  odoo-db-data:
