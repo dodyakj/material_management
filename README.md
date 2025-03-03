@@ -148,10 +148,3 @@ curl -X POST http://localhost:8014/api/materials -H "Content-Type: application/j
 ## Unit Testing
 Unit tests are located in the `tests/` folder. You can run them using the command provided in step 6.
 
----
-
-## License
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-```
-
----
