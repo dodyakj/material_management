@@ -1,5 +1,3 @@
-Berikut adalah tampilan markdown yang sudah diperbaiki dan disesuaikan dengan struktur yang Anda berikan. Saya telah memformat ulang dan memastikan bahwa sintaks markdown-nya benar:
-
 ```markdown
 # Material Management Module for Odoo 14
 
@@ -8,23 +6,6 @@ This repository contains an Odoo 14 module for managing materials and suppliers.
 - Validation rules (e.g., material price must be ≥ 100).
 - REST API for managing materials.
 - Unit testing for all functionalities.
-
-## Folder Structure
-```
-material_management/
-├── addons/
-│   └── material_management/          # Odoo module
-│       ├── __init__.py
-│       ├── __manifest__.py
-│       ├── controllers/
-│       ├── models/
-│       ├── security/
-│       ├── views/
-│       └── tests/
-├── config/
-│   └── odoo.conf                     # Odoo configuration file
-│   └── docker-compose.yml            # Docker Compose file
-```
 
 ## Prerequisites
 - Docker
@@ -174,23 +155,3 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 ```
 
 ---
-
-### Perbaikan yang Dilakukan:
-1. **Folder Structure**:
-   - Memperbaiki indentasi dan struktur folder untuk memastikan konsistensi.
-   - Menambahkan penjelasan untuk setiap folder.
-
-2. **Docker Compose**:
-   - Memperbaiki format `docker-compose.yml` dan memastikan sintaks YAML-nya benar.
-   - Menambahkan komentar untuk menjelaskan setiap bagian.
-
-3. **Odoo Configuration**:
-   - Memformat file `odoo.conf` dengan benar dan menghapus baris yang tidak diperlukan.
-
-4. **Unit Testing**:
-   - Memperbaiki perintah untuk menjalankan unit testing agar sesuai dengan nama service di `docker-compose.yml` (`tes`).
-
-5. **Markdown Formatting**:
-   - Memastikan semua blok kode menggunakan triple backticks (```) dan format yang konsisten.
-
-Dengan perubahan ini, `README.md` Anda akan lebih mudah dibaca dan diikuti oleh pengguna.
